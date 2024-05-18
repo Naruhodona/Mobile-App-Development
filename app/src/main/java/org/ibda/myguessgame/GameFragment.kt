@@ -24,11 +24,6 @@ class GameFragment : Fragment() {
     private lateinit var vm : GameViewModel
     private lateinit var binding : FragmentGameBinding
 
-//    private lateinit var wordTV : TextView
-//    private lateinit var livesTV : TextView
-//    private lateinit var incorrectGuessTV: TextView
-//    private lateinit var guessET : EditText
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,71 +51,8 @@ class GameFragment : Fragment() {
 
 
 
-//        val guessBtn = rootView.findViewById<Button>(R.id.guess_btn)
-//        wordTV = rootView.findViewById<TextView>(R.id.word)
-//        livesTV = rootView.findViewById<TextView>(R.id.lives)
-//        incorrectGuessTV = rootView.findViewById<TextView>(R.id.incorrect_guesses)
-//        guessET = rootView.findViewById<EditText>(R.id.guess)
-
-
-//        this.secretWordDisplay = this.getDisplayedSecretWord()
-//        this.updateScreen()
-
-//        binding.guessBtn.setOnClickListener {
-//            this.vm.makeGuess(binding.guess.text.toString().uppercase())
-//            this.binding.guess.text = null
-////            updateScreen()
-//
-//            if(this.vm.isWon() || this.vm.isLost())
-//            {
-//                val action = GameFragmentDirections
-//                    .actionGameFragmentToResultFragment(this.vm.getWonLossMessage())
-//                rootView.findNavController().navigate(action)
-//            }
-//        }
-
-//        vm.livesLeft.observe(this.viewLifecycleOwner, Observer { newValue ->
-//            binding.lives.text = "Quota Permainan Sisa $newValue kali."
-//        })
-//
-//        vm.secretWordDisplay.observe(viewLifecycleOwner, Observer { newValue ->
-//            binding.word.text = newValue
-//        })
-
-
-
-
-//        guessBtn.setOnClickListener {
-//            this.vm.makeGuess(this.guessET.text.toString().uppercase())
-//            this.guessET.text = null
-//            updateScreen()
-//
-//            if(this.vm.isWon() || this.vm.isLost())
-//            {
-//                val action = GameFragmentDirections
-//                    .actionGameFragmentToResultFragment(this.vm.getWonLossMessage())
-//                rootView.findNavController().navigate(action)
-//            }
-//        }
-
-//        vm.livesLeft.observe(this.viewLifecycleOwner, Observer { newValue ->
-//            livesTV.text = "Quota Permainan Sisa $newValue kali."
-//        })
-//
-//        vm.secretWordDisplay.observe(viewLifecycleOwner, Observer { newValue ->
-//            wordTV.text = newValue
-//        })
-
-
-
         return rootView
     }
-
-//    fun updateScreen() {
-////        this.wordTV.text = this.vm.secretWordDisplay
-////        this.livesTV.text = "Quota Permainan Sisa ${vm.livesLeft} kali."
-////        this.incorrectGuessTV.text = "Incorrect Guess : ${vm.incorrectGuess}"
-//    }
 
 
 }
