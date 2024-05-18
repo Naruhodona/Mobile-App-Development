@@ -3,28 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/gameFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/gameFragment"
-        android:name="org.ibda.myguessgame.GameFragment"
-        android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_gameFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+        android:id="@+id/homeFragment"
+        android:name="org.ibda.myguessgame.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
     </fragment>
 
-    <fragment
-        android:id="@+id/resultFragment"
-        android:name="org.ibda.myguessgame.ResultFragment"
-        android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <argument
-            android:name="result"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_resultFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
-    </fragment>
+
 </navigation>
