@@ -11,7 +11,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class NormalViewModel : ViewModel() {
-    private lateinit var botnavvm : BottomNavViewModel
     private lateinit var retrofit: Retrofit
     private lateinit var taskApiService: TaskApiService
 
@@ -28,25 +27,33 @@ class NormalViewModel : ViewModel() {
 
     fun setDestination(destination: String) {
         this.destination.value = destination
-        Log.d("M", this.destination.value.toString())
         getTasksByCategoryAndStatus()
     }
 
     fun getTasksByCategoryAndStatus(){
-        Log.d("M2", this.destination.value.toString())
         val call = taskApiService.getTasksByCategoryAndStatus("normal",this.destination.value.toString())
         call.enqueue(object : Callback<List<TaskInfo>> {
             override fun onFailure(call: Call<List<TaskInfo>>, t: Throwable) {
-                Log.e("HomeViewModel", "Failed to get search results by category and status", t)
+                Log.e("NormalViewModel", "Failed to get search results by category and status", t)
             }
 
             override fun onResponse(call: Call<List<TaskInfo>>, response: Response<List<TaskInfo>>) {
                 if (response.isSuccessful) {
                     tasks.value = response.body()
                 } else {
-                    Log.e("HomeViewModel", "Failed to get results by category and status: ${response.errorBody()?.string()}")
+                    Log.e("NormalViewModel", "Failed to get results by category and status: ${response.errorBody()?.string()}")
                 }
             }
         })
+    }
+
+    fun actionText(): String {
+        if(this.destination.value == "new"){
+            return("Take")
+        } else if(this.destination.value == "in progress"){
+            return("Done")
+        } else {
+            return("Details")
+        }
     }
 }
