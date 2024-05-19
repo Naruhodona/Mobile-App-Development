@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
             if(newValue != ""){
                 val action = HomeFragmentDirections
                     .actionHomeFragmentToBottomNavFragment(this.vm.destination.value!!)
+                this.vm.destination.value = ""
                 rootView.findNavController().navigate(action)
             }
         })
