@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import org.ibda.myguessgame.databinding.FragmentTaskDetailBinding
 
 class TaskDetailFragment : Fragment() {
 
@@ -13,20 +15,19 @@ class TaskDetailFragment : Fragment() {
         fun newInstance() = TaskDetailFragment()
     }
 
-    private val viewModel: TaskDetailViewModel by viewModels()
+    private lateinit var vm: TaskDetailViewModel
+    private lateinit var binding: FragmentTaskDetailBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        var view =  inflater.inflate(R.layout.fragment_task_detail, container, false)
+        this.binding = FragmentTaskDetailBinding.inflate(inflater,container,false)
+        var rootView = binding.root
 
-        return view
+        vm = ViewModelProvider(this).get(TaskDetailViewModel::class.java)
+
+        return rootView
     }
 }
