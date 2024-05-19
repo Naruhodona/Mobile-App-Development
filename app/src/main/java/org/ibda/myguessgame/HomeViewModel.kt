@@ -64,6 +64,26 @@ class HomeViewModel : ViewModel() {
         })
     }
 
+//    fun addTask(taskInfo: TaskInfo) {
+//        val call = taskApiService.addTask(taskInfo)
+//        call.enqueue(object : Callback<TaskInfo> {
+//            override fun onFailure(call: Call<TaskInfo>, t: Throwable) {
+//                Log.e("HomeViewModel", "Failed to create task", t)
+//            }
+//
+//            override fun onResponse(call: Call<TaskInfo>, response: Response<TaskInfo>) {
+//                if (response.isSuccessful) {
+//                    Log.i("HomeViewModel", "Task created successfully: ${response.body()}")
+//                } else {
+//                    Log.e("HomeViewModel", "Failed to create task: ${response.errorBody()?.string()}")
+//                }
+//            }
+//        })
+//    }
+
+
+
+
     fun goToNav(dest: String){
         this.destination.value = dest
     }
