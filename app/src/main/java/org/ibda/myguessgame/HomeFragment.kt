@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import org.ibda.myguessgame.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -25,6 +26,14 @@ class HomeFragment : Fragment() {
         this.binding.home = vm
         this.binding.lifecycleOwner = viewLifecycleOwner
 
+        vm.destination.observe(this.viewLifecycleOwner, {newValue->
+            if(newValue != ""){
+                val action = HomeFragmentDirections
+                    .actionHomeFragmentToBottomNavFragment(this.vm.destination.value!!)
+                this.vm.destination.value = ""
+                rootView.findNavController().navigate(action)
+            }
+        })
 
         return rootView
     }
