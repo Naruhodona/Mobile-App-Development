@@ -1,6 +1,5 @@
 package org.ibda.myguessgame
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.ibda.myguessgame.databinding.FragmentImportantBinding
-import org.ibda.myguessgame.databinding.FragmentNormalBinding
 
 class ImportantFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel

@@ -20,6 +20,6 @@ interface TaskApiService {
         @Query("status") status: String):
             Call<List<TaskInfo>>
 
-//    @POST("/tasks")
-//    fun addTask(@Body taskInfo: TaskInfo): Call<TaskInfo>
+    @POST("/tasks")
+    fun addTask(@Body taskInfo: TaskInfo): Call<TaskInfo>
 }
