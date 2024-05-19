@@ -17,6 +17,8 @@ class HomeViewModel : ViewModel() {
     val progressTaskTotal = MutableLiveData<Int>(0)
     val doneTaskTotal = MutableLiveData<Int>(0)
 
+    val destination = MutableLiveData<String>("")
+
     init {
         this.retrofit = Retrofit.Builder()
             .baseUrl("http://10.0.2.2:5000")
@@ -60,6 +62,10 @@ class HomeViewModel : ViewModel() {
                 }
             }
         })
+    }
+
+    fun goToNav(dest: String){
+        this.destination.value = dest
     }
 
 
