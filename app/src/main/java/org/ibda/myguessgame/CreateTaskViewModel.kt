@@ -31,7 +31,7 @@ class CreateTaskViewModel : ViewModel() {
 
     fun addtask(){
         val created_time: LocalDate = LocalDate.now()
-        val newTask: TaskInfo = TaskInfo(
+        val newTask = TaskInfo(
             id = 0,
             title = this.title.value!!,
             description = this.description.value!!,

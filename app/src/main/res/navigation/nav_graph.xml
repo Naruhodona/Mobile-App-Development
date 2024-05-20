@@ -30,6 +30,11 @@
         <argument
             android:name="destination"
             app:argType="string"/>
+        <action
+            android:id="@+id/action_BottomNavFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment">
+
+        </action>
     </fragment>
 
     <fragment
