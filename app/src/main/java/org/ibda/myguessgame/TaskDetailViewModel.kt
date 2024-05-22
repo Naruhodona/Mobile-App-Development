@@ -86,7 +86,6 @@ class TaskDetailViewModel : ViewModel() {
                 duration = this.duration.value!!,
                 status = this.status.value!!)
             putApi(id, task)
-            goToNav()
         } else {
             if(this.status.value == "new"){
                 this.status.value = "in progress"
@@ -100,7 +99,6 @@ class TaskDetailViewModel : ViewModel() {
                     duration = "",
                     status = this.status.value!!)
                 putApi(id, task)
-                goToNav()
             } else {
                 goToNav()
             }
@@ -123,13 +121,16 @@ class TaskDetailViewModel : ViewModel() {
         call.enqueue(object : Callback<TaskInfo> {
             override fun onFailure(call: Call<TaskInfo>, t: Throwable) {
                 Log.e("TaskDetailViewModel", "Failed to update task", t)
+                goToNav()
             }
             override fun onResponse(call: Call<TaskInfo>, response: Response<TaskInfo>) {
                 if (response.isSuccessful) {
                     val updatedTask = response.body()
                     Log.d("TaskDetailViewModel", "Task updated: $updatedTask")
+                    goToNav()
                 } else {
                     Log.e("TaskDetailViewModel", "Failed to update task: ${response.errorBody()?.string()}")
+                    goToNav()
                 }
             }
         })

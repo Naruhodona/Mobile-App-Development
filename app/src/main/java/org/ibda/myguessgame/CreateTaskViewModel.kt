@@ -52,14 +52,15 @@ class CreateTaskViewModel : ViewModel() {
                     // Handle success
                     val createdTask = response.body()
                     Log.d("CreateTaskViewModel", "Task created: $createdTask")
+                    backToHome()
 
                 } else {
                     // Handle failure
                     Log.e("CreateTaskViewModel", "Failed to create task: ${response.errorBody()?.string()}")
+                    backToHome()
                 }
             }
         })
-        backToHome()
     }
     fun backToHome(){
         this.move.value = true
