@@ -1,7 +1,12 @@
+# How to run the Flask without any problem
+
+
+### Import the database
 Create a database named "task_inventory"
 
 Import sql file named task_inventory.sql
 
+### ACtivate virtual environment
 Open Command Prompt terminal
 
 Activate the virtual environment with \Scripts\activate command in "uasEnv" directory
@@ -12,4 +17,5 @@ After virtual environment activated, you can install requirement packages to run
 3. flask_sqlalchemy
 4. flask_cors
 
+### Run the Flask
 Run the flask by execute command "flask run"
