@@ -6,7 +6,7 @@ Create a database named "task_inventory"
 
 Import sql file named task_inventory.sql
 
-### ACtivate virtual environment
+### Activate virtual environment
 Open Command Prompt terminal
 
 Activate the virtual environment with \Scripts\activate command in "uasEnv" directory
