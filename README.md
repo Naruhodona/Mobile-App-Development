@@ -9,7 +9,7 @@ Import sql file named task_inventory.sql
 ### Activate virtual environment
 Open Command Prompt terminal
 
-Activate the virtual environment with \Scripts\activate command in "uasEnv" directory
+Activate the virtual environment with \Scripts\activate command in "BackEnd" directory
 
 After virtual environment activated, you can install requirement packages to run the flask by execute command "pip install -r requirements.txt". If it doesn't work, install these packages manually by execute command "pip install <package_name>":
 1. flask
