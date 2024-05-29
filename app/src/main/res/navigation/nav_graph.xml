@@ -14,6 +14,10 @@
             android:id="@+id/action_HomeFragment_to_BottomNavFragment"
             app:destination="@+id/BottomNavFragment"
         >
+        </action>
+        <action
+            android:id="@+id/action_HomeFragment_to_CreateTaskFragment"
+            app:destination="@+id/CreateTaskFragment">
 
         </action>
     </fragment>
@@ -26,6 +30,23 @@
         <argument
             android:name="destination"
             app:argType="string"/>
+        <action
+            android:id="@+id/action_BottomNavFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment">
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateTaskFragment"
+        android:name="org.ibda.myguessgame.CreateTaskFragment"
+        android:label="fragment_create_task"
+        tools:layout="@layout/fragment_create_task">
+        <action
+            android:id="@+id/action_CreateTaskFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment">
+
+        </action>
     </fragment>
 
 </navigation>

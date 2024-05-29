@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import org.ibda.myguessgame.databinding.FragmentBottomNavBinding
@@ -33,6 +35,15 @@ class BottomNavFragment : Fragment() {
 
         this.binding.botnav = vm
         this.binding.lifecycleOwner = viewLifecycleOwner
+
+        this.vm.back.observe(this.viewLifecycleOwner, Observer {newValue->
+            if(newValue){
+                val action = BottomNavFragmentDirections
+                    .actionBottomNavFragmentToHomeFragment()
+                rootView.findNavController().navigate(action)
+            }
+
+        })
 
         val navHostFragment = childFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment

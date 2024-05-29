@@ -18,6 +18,7 @@ class HomeViewModel : ViewModel() {
     val doneTaskTotal = MutableLiveData<Int>(0)
 
     val destination = MutableLiveData<String>("")
+    val add = MutableLiveData<Boolean>(false)
 
     init {
         this.retrofit = Retrofit.Builder()
@@ -64,25 +65,9 @@ class HomeViewModel : ViewModel() {
         })
     }
 
-//    fun addTask(taskInfo: TaskInfo) {
-//        val call = taskApiService.addTask(taskInfo)
-//        call.enqueue(object : Callback<TaskInfo> {
-//            override fun onFailure(call: Call<TaskInfo>, t: Throwable) {
-//                Log.e("HomeViewModel", "Failed to create task", t)
-//            }
-//
-//            override fun onResponse(call: Call<TaskInfo>, response: Response<TaskInfo>) {
-//                if (response.isSuccessful) {
-//                    Log.i("HomeViewModel", "Task created successfully: ${response.body()}")
-//                } else {
-//                    Log.e("HomeViewModel", "Failed to create task: ${response.errorBody()?.string()}")
-//                }
-//            }
-//        })
-//    }
-
-
-
+    fun goToCreate(){
+        this.add.value = true
+    }
 
     fun goToNav(dest: String){
         this.destination.value = dest

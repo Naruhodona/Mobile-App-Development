@@ -35,6 +35,14 @@ class HomeFragment : Fragment() {
             }
         })
 
+        vm.add.observe(this.viewLifecycleOwner, {newValue->
+            if (newValue){
+                val action = HomeFragmentDirections
+                    .actionHomeFragmentToCreateTaskFragment()
+                rootView.findNavController().navigate(action)
+            }
+        })
+
         return rootView
     }
 }

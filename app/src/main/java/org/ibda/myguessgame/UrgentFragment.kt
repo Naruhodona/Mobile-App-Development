@@ -6,14 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.ibda.myguessgame.databinding.FragmentImportantBinding
 import org.ibda.myguessgame.databinding.FragmentUrgentBinding
 
-class UrgentFragment : Fragment() {
+class UrgentFragment : Fragment(), TaskClickListener {
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var vm : UrgentViewModel
     private lateinit var binding : FragmentUrgentBinding
@@ -40,9 +42,16 @@ class UrgentFragment : Fragment() {
         })
 
         this.vm.tasks.observe(this.viewLifecycleOwner, Observer { tasks ->
-            recyclerView.adapter = TaskAdapter(tasks, vm.actionText())
+            recyclerView.adapter = TaskAdapter(tasks, vm.actionText(), this)
         })
 
         return rootView
     }
+    override fun onTaskClick(taskId: Int) {
+        val rootView = binding.root
+        val action = UrgentFragmentDirections
+            .actionUrgentFragmentToTaskDetailFragment(taskId)
+        rootView.findNavController().navigate(action)
+    }
+
 }
