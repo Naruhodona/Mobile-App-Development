@@ -25,7 +25,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Task : "/>
+                android:text="Task : "
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/taskTitle"
@@ -42,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskDescription"
@@ -59,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskCategory"
@@ -75,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskStatus"
@@ -91,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Created Time : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskCreatedTime"
@@ -107,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Finished Time : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskFinishedTime"
@@ -124,6 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Duration : "
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/taskDuration"
